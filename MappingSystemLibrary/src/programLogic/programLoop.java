@@ -22,22 +22,27 @@ public class programLoop {
 	public static void main(String[] args) {
 
 		//Initialize all Objects
-		Initializer.initializeAll();
+		Initializer.initializeAll(args[0]);
 
 		
 		//variables used for the constant creation of Processed data
 		//from raw data
 		Scanner ini;
-		File inputFile = new File("DatabaseTemporaryStorage/Input/CurrentRawData");
+		File inputFile = new File(args[0]+"/CurrentRawData");
 		ArrayList<String> tempOutput;
-		File outputFile = new File("DatabaseTemporaryStorage/Output/ProcessedData");
+		File outputFile = new File(args[0]+"/ProcessedData");
 
+		//System.out.println("THIS IS BEFORE LOOP");
+		
+		File newFile = new File(args[0]+"/FUCKYESMATE");
+		
 		//start program loop
 		while(true) {
 
 			//check if we have an input file
-			if(!(inputFile.exists() && !inputFile.isDirectory()) ){
+			if(! (inputFile.exists() && !inputFile.isDirectory()) ){
 				try {
+					//System.out.println("WE DID NOT FFIND THE FILE");
 					Thread.sleep(1000);
 					//sleep 1 second
 				} catch (InterruptedException e) {
@@ -46,6 +51,8 @@ public class programLoop {
 				}
 				continue;
 			}
+			
+			//System.out.println("WE FOUND THE FILE");
 
 
 			try {
@@ -143,7 +150,7 @@ public class programLoop {
 				ini.close();
 				
 				//TO CHANGE
-				//inputFile.delete();	//WENEEDTHIS
+				inputFile.delete();	//WENEEDTHIS
 
 				FileWriter fileWrite = new FileWriter(outputFile, true);
 				
@@ -153,7 +160,7 @@ public class programLoop {
 				}
 
 				fileWrite.close();
-				break;	//TO CHANGE
+				//break;	//TO CHANGE//
 
 			} catch (FileNotFoundException e) {
 				//Input was written incorrectly

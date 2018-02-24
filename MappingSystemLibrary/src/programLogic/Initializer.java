@@ -21,25 +21,26 @@ public class Initializer {
 	
 	private static Scanner ini;
 	
-	public static void initializeAll() {
+	public static void initializeAll(String path) {
 		
 		File file;
 		Controller.list = new IDList();
 		
+		
 		//Areas
-		file=new File("DatabaseTemporaryStorage/Input/InitializerFiles/Room");
+		file=new File(path+"/initialization_data/DatabaseTemporaryStorage/Input/InitializerFiles/Room");
 		initializeAreas(file);
 		
 		//Activities
-		file=new File("DatabaseTemporaryStorage/Input/InitializerFiles/Activity");
+		file=new File(path+"/initialization_data/DatabaseTemporaryStorage/Input/InitializerFiles/Activity");
 		initializeActivities(file);
 		
 		//Mobiles
-		file=new File("DatabaseTemporaryStorage/Input/InitializerFiles/Mobile");
+		file=new File(path+"/initialization_data/DatabaseTemporaryStorage/Input/InitializerFiles/Mobile");
 		initializeMobiles(file);
 		
 		//TransferGates
-		file=new File("DatabaseTemporaryStorage/Input/InitializerFiles/TransferGate");
+		file=new File(path + "/initialization_data/DatabaseTemporaryStorage/Input/InitializerFiles/TransferGate");
 		initializeTransferGates(file);
 			
 	}
