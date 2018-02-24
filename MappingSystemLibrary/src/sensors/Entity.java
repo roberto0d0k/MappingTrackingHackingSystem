@@ -1,9 +1,8 @@
 package sensors;
 
 //Items which have IDs and can move around the space
-public interface Entity {
+public interface Entity extends IDable{
 	
-	 public int getID();
 	 public String getName(); 
 
 }

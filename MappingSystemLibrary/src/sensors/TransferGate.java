@@ -13,8 +13,8 @@ public class TransferGate extends StaticGate{
 	private Area roomA;	//the two rooms this transfer gate is connecting
 	private Area roomB;
 	
-	public TransferGate(int id, String name, int[] coordinates, 
-			Area roomA, Area roomB) {
+	public TransferGate(int id, String name,  
+			Area roomA, Area roomB,int[] coordinates) {
 		this.id = id;
 		this.name = name;
 		this.coordinates = coordinates;
@@ -26,9 +26,8 @@ public class TransferGate extends StaticGate{
 	public TransferGate(int id, String name, Area roomA, Area roomB) {
 		this.id = id;
 		this.name = name;
-		coordinates = new int[2];
+		coordinates = new int[1];
 		coordinates[0] = 0;
-		coordinates[1] = 0;
 		this.roomA = roomA;
 		this.roomB = roomB;
 	}

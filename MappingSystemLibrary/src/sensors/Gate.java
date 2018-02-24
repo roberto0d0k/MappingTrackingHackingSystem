@@ -1,9 +1,8 @@
 package sensors;
 
 //Items which recognize IDs
-public interface Gate {
+public interface Gate extends IDable{
 
-	 public int getID();
 	 public String getName(); 
 	
 }

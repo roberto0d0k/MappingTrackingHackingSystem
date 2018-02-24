@@ -11,7 +11,7 @@ public class StaticActivityGate extends StaticGate{
 	private int[] coordinates;
 	private Area area;
 	
-	public StaticActivityGate(int id, String name, int[] coordinates, Area area) {
+	public StaticActivityGate(int id, String name, Area area, int[] coordinates) {
 		this.id = id;
 		this.name = name;
 		this.coordinates = coordinates;
@@ -21,9 +21,8 @@ public class StaticActivityGate extends StaticGate{
 	public StaticActivityGate(int id, String name, Area area) {
 		this.id = id;
 		this.name = name;
-		coordinates = new int[2];
+		coordinates = new int[1];
 		coordinates[0] = 0;
-		coordinates[1] = 0;
 		this.area = area;
 	}
 	

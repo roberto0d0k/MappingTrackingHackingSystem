@@ -1,0 +1,13 @@
+Activity				
+int ID|String name|boolean Static|int Room ID|int[] (if static)coordinates
+
+				
+Mobile				
+int ID|String name			
+				
+Room				
+int ID|String name|int ID area I am inside of	
+int ID|String name (THIS EXAMPLE HAS NO ENCLOSING AREA)	
+				
+Transfer gate				
+int ID|String name|int roomAID|int roomBID|int[] coordinates

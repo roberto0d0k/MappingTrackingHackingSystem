@@ -1,6 +1,8 @@
 package area;
 
-public class Area {
+import sensors.IDable;
+
+public class Area implements IDable{
 	
 	private int id;
 	private String name;

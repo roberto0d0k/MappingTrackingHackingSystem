@@ -13,6 +13,7 @@ public class MobileActivityGate extends MobileGate{
 	public MobileActivityGate(int id, String name, Area area) {
 		this.id = id;
 		this.name = name;
+		this.area = area;
 	}
 	
 	//changes mobiles area
