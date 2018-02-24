@@ -32,4 +32,12 @@ public class Area implements IDable{
 		return encompasingArea;
 	}
 	
+	public boolean equalTo(Area otherArea) {
+		if(otherArea.getID() == id) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 }

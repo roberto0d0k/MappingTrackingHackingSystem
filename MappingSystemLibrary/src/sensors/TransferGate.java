@@ -21,6 +21,9 @@ public class TransferGate extends StaticGate{
 		this.roomA = roomA;
 		this.roomB = roomB;
 		
+		//System.out.println(String.format("MobileActivity Created %d, %s, %s, %s", id,name,roomA.getName(),roomB.getName()));
+		
+		
 	}
 	
 	public TransferGate(int id, String name, Area roomA, Area roomB) {
@@ -50,9 +53,23 @@ public class TransferGate extends StaticGate{
 		return name;
 	}
 
-	@Override
-	public int[] coordinates() {
+	public int[] getCoordinates() {
 		return coordinates;
+	}
+
+	@Override
+	public boolean isMobileActivityGate() {
+		return false;
+	}
+
+	@Override
+	public boolean isStaticActivityGate() {
+		return false;
+	}
+
+	@Override
+	public boolean isTransferGate() {
+		return true;
 	}
 	
 }

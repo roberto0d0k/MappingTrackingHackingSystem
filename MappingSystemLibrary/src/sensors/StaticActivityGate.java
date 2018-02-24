@@ -8,22 +8,16 @@ public class StaticActivityGate extends StaticGate{
 
 	private int id;
 	private String name;
-	private int[] coordinates;
 	private Area area;
 	
-	public StaticActivityGate(int id, String name, Area area, int[] coordinates) {
-		this.id = id;
-		this.name = name;
-		this.coordinates = coordinates;
-		this.area = area;
-	}
 	
 	public StaticActivityGate(int id, String name, Area area) {
 		this.id = id;
 		this.name = name;
-		coordinates = new int[1];
-		coordinates[0] = 0;
 		this.area = area;
+		
+		//System.out.println(String.format("StaticActivity Created %d, %s, %s", id,name,area.getName()));
+		
 	}
 	
 	//returns mobiles area, returns null if unknown 
@@ -43,8 +37,18 @@ public class StaticActivityGate extends StaticGate{
 	}
 
 	@Override
-	public int[] coordinates() {
-		return coordinates;
+	public boolean isMobileActivityGate() {
+		return false;
+	}
+
+	@Override
+	public boolean isStaticActivityGate() {
+		return true;
+	}
+
+	@Override
+	public boolean isTransferGate() {
+		return false;
 	}
 
 }

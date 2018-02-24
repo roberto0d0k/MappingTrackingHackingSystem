@@ -16,7 +16,7 @@ import sensors.TransferGate;
 
 public class Initializer {
 
-	private static final String SPLITTER = "|";
+	private static final String SPLITTER = "\'";
 	private static final String COORDINATE_SPLITTER = ",";
 	
 	private static Scanner ini;
@@ -64,18 +64,10 @@ public class Initializer {
 				//Split line into elements
 				temp = ini.nextLine().split(SPLITTER);
 				
-				//split coordinate field
-				String[] tempCoordinates = temp[4].split(COORDINATE_SPLITTER);
-				int[] coordinates = new int[tempCoordinates.length];
-				for(int m=0; m< tempCoordinates.length; m++) {
-					coordinates[m] = Integer.parseInt(tempCoordinates[m]);
-				}
-				
 				//if it is static initialize a static
 				if(temp[2].equals("1")) {
 					Controller.list.add( new StaticActivityGate(Integer.parseInt(temp[0]),
-							temp[1], (Area)Controller.list.getID(Integer.parseInt(temp[3])),
-							coordinates));
+							temp[1], (Area)Controller.list.getID(Integer.parseInt(temp[3]))));
 				}else {
 					//if its not static initialize
 					Controller.list.add( new MobileActivityGate(Integer.parseInt(temp[0]),
@@ -147,10 +139,14 @@ public class Initializer {
 				if(temp.length == 2) {
 					Controller.list.add(new Area(Integer.parseInt(temp[0]),
 							temp[1]));
+					
+					//System.out.println("THE AREA IS -"+ temp[0] +"-"+temp[1]);
+					
 				}else {
 					//has enclosing area
+					
 					Controller.list.add(new Area( Integer.parseInt(temp[0]),
-							temp[1], (Area) Controller.list.getID(Integer.parseInt(temp[3]))));
+							temp[1], (Area) Controller.list.getID(Integer.parseInt(temp[2]))));
 				}
 				
 	

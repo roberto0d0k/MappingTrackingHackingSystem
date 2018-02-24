@@ -14,6 +14,9 @@ public class MobileActivityGate extends MobileGate{
 		this.id = id;
 		this.name = name;
 		this.area = area;
+		
+		//System.out.println(String.format("MobileActivity Created %d, %s, %s", id,name,area.getName()));
+		
 	}
 	
 	//changes mobiles area
@@ -35,6 +38,21 @@ public class MobileActivityGate extends MobileGate{
 	@Override
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public boolean isMobileActivityGate() {
+		return true;
+	}
+
+	@Override
+	public boolean isStaticActivityGate() {
+		return false;
+	}
+
+	@Override
+	public boolean isTransferGate() {
+		return false;
 	}
 	
 	

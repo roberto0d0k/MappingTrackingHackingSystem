@@ -1,6 +1,9 @@
 package dataStructures;
 
 import java.util.ArrayList;
+
+import javax.swing.text.html.parser.Entity;
+
 import sensors.IDable;
 
 public class IDList {
@@ -21,21 +24,25 @@ public class IDList {
 			if(item.getID() < list.get(p).getID()) {
 				list.add(p, item);
 				length ++;
-				break;
+				return;
 			}
 		}
 		
 		list.add(item);
+		length++;
 		
 	}
 	
 	//will return null if ID not found
 	public IDable getID(int id) {
+		
 		for(int p=0; p< length; p++) {
+			
 			if(list.get(p).getID()==id) {
 				return list.get(p);
 			}
 		}
+		
 		return null;
 	}
 	
