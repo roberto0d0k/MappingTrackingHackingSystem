@@ -1,14 +1,32 @@
+Map & Tracking System
 
+Please note:
+This software is most advantageous to run when paired with the MATLAB open source code Library that accompanies it. 
 
 Open software for RFID mapping and tracking.
+This software allows users to map and track activity of a group of users and utilities, across an area.
 
+This software turns a group of identifiers of a signal and signal alerts into a timestamp which can be continuously or singularity uploaded to the net.
 
+These signals update a series of Objects which were initially created by the initializer files.
+The objects in the file will allow users to create their own scheme or timeline to track the individuals across the area.
 
-1. What is it
-1.2 Why is it useful
-2. How to use it
+The inputs needed to run this program are initializer text files, and a constantly updating signal text file.
 
+The initializer files needed are:
 
+Activity (representing activities which can report signals across the area)			
+int ID’String name’boolean Static’int Room ID
+Mobile	(beings which can be targeted by Activities across the area)
+int ID’String name			
+Room	(if any rooms or areas in the studyied area)
+int ID’String name’int inside_of_other_RoomID						
+Transfer gate	(Usually referring to doors, stations Mobiles can use to change areas)			
+int ID’String name’int roomAID’int roomBID
 
-On Wisconsin!
-On Insight!
+The file updated needs:
+TIMESTAMP’(Activity or TransferGate ID)’Mobile ID
+
+The information in the file will then be converted into an output which describes who did what at what time and where.
+
+Thank you for reading this README written after a few days of restlessness.
