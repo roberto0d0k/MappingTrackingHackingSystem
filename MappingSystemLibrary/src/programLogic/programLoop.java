@@ -141,6 +141,12 @@ public class programLoop {
 						}
 					}
 					
+					//ADDED
+					if(gate.isTransferGate()) {
+						temporaryLine = temporaryLine + SPLITTER + gate.getID()
+								+ SPLITTER + gate.getName();
+					}
+					
 					//System.out.println("4 " + entity.getArea().getName());
 					
 					//add temporaryLine to tempOutput
