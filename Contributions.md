@@ -22,3 +22,6 @@ Roberto O'Dogherty: rodogherty@wisc.edu
     * Raspberry Pi Hub Java program to process raw data and determine which rooms teams are in
 
 Ethan Young: Eyoung8@wisc.edu
+
+   * Python script implementation of SQLite database storage of processes data
+   * Real-Time GUI for showing the tracking of users throughout a system
