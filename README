@@ -1,5 +1,5 @@
-#Hermes Track
-###Open source software for RFID mapping and tracking.
+# Hermes Track
+### Open source software for RFID mapping and tracking.
 
 PURPOSE: To allow for easy access to and use of RFID hardware for data aquisition. Various examples are shown below of 
           utilizing RFID hardware wrappers for tracking people throughout an area, alerting someone when they forget to 
@@ -23,9 +23,9 @@ There is then an API that lets users access the data for data analysis, decision
 purpose tracking.
 
 
-##RFID TRACKING SYSTEM
+## RFID TRACKING SYSTEM
 
-###Hardware
+### Hardware
 *         The sensor system is implemented using arduino controlled rfid sensors. See Arduino_RFID_Setup.pdf for specifics on 
           how to setup for use and connecting to Raspberry pis.
 
@@ -37,7 +37,7 @@ purpose tracking.
           *         The Hub also manages the cloud database by fetching and pushing data to it. (SEE RASPBERRY_PI_SOFTWARE 
           FOR ALL OF THE SOFTWARE NEEDED ON THE RASPBERRY PIS)
           
-###Software
+### Software
 *         The Raspberry_Pi_Software will need to be loaded onto the pis specified above. See the Setup_Pis.pdf inside for more
           details. This includes the RFID sensor software, the data processing software, and the database interface software.
 *         Matlab_Data_Analytic_Software contains a matlab library that takes in the data from the database and allows for the 
