@@ -12,7 +12,8 @@ PURPOSE: To allow for easy access to and use of RFID hardware for data aquisitio
 IMPLEMENTATION: This software and hardware pair allows users to map and track activity of a group of users and utilities across multiple areas.
 By specifying the location of static (non-moving RFID readers) sensors, it is possible to locate the location of users with
 RFID chips as they pass through the various sensors. The sensors are able to estimate the location of users during a given
-time-slice, allowing for applications to be developed by utilizing the data. 
+time-slice, allowing for applications such as mapping activity, tracking traffic and inventory, sending feeback to implement changes in daily
+activities, etc.
 
 HARDWARE: The hardware employs a network of Raspberry pis for communcation and Arduinos to control the RFID readers. These sensors are all
 static, and remain in the same location to give us a reference point to locate the mobile RFID chip users. When a user trips
