@@ -1,5 +1,6 @@
 # Hermes Track
-### Open source software for RFID mapping and tracking.
+
+### Open source software for RFID mapping and tracking. Named after the God of Communication.
 
 PURPOSE: To allow for easy access to and use of RFID hardware for data aquisition. Various examples are shown below of 
           utilizing RFID hardware wrappers for tracking people throughout an area, alerting someone when they forget to 
