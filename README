@@ -20,7 +20,7 @@ one of the sensors, then the information is transfered back to a central Hub tha
 updated locations for all RFID chips in the system.
 
 SOFTWARE: The software system is meant to act as a processing system and resource for applications to use RFID tracking technology.
-After the data is processes and the locations of all of the RFID chips are estimated, this data is uploaded to a database for
+After the data is processed and the locations of all of the RFID chips are estimated, this data is uploaded to a database for
 persitent storage. A time stamp associated with each system snapshot can be used to track people or objects as they move.
 There is then an API that lets users access the data for data analysis, decision analytics, and general
 purpose tracking.
