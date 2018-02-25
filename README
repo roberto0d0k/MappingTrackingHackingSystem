@@ -1,10 +1,28 @@
-Map & Tracking System
+Hermes Track: Open source software for RFID mapping and tracking.
 
-Please note:
-This software is most advantageous to run when paired with the MATLAB open source code Library that accompanies it. 
+PURPOSE: To allow for easy access to and use of RFID hardware. Various examples are shown below of utilizing RFID hardware wrappers
+          for tracking people throughout an area, alerting someone when they forget to do an action, or generating analytics
+          from IoT data.
 
-Open software for RFID mapping and tracking.
-This software allows users to map and track activity of a group of users and utilities, across an area.
+
+IMPLEMENTATION: This software and hardware pair allows users to map and track activity of a group of users and utilities across multiple areas.
+By specifying the location of static (non-moving RFID readers) sensors, it is possible to locate the location of users with
+RFID chips as they pass through the various sensors. The sensors are able to estimate the location of users during a given
+time-slice, allowing for applications to be developed by utilizing the data. 
+
+HARDWARE: The hardware employs a network of Raspberry pis for communcation and Arduinos to control the RFID readers. These sensors are all
+static, and remain in the same location to give us a reference point to locate the mobile RFID chip users. When a user trips
+one of the sensors, then the information is transfered back to a central Hub that processes the incoming data and determines
+updated locations for all RFID chips in the system.
+
+SOFTWARE: The software system is meant to act as a processing system and resource for applications to use RFID tracking technology.
+After the data is processes and the locations of all of the RFID chips are estimated, this data is uploaded to a database for
+persitent storage. A time stamp associated with each system snapshot can be used to track people or objects as they move.
+There is then an API that lets users access the data for data analysis, decision analytics, and general
+purpose tracking.
+
+
+
 
 This software turns a group of identifiers of a signal and signal alerts into a timestamp which can be continuously or singularity uploaded to the net.
 
@@ -28,5 +46,9 @@ The file updated needs:
 TIMESTAMP’(Activity or TransferGate ID)’Mobile ID
 
 The information in the file will then be converted into an output which describes who did what at what time and where.
+
+
+Please note:
+This software is most advantageous to run when paired with the MATLAB open source code Library that accompanies it. 
 
 Thank you for reading this README written after a few days of restlessness.
