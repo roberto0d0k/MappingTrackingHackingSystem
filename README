@@ -1,8 +1,9 @@
-Hermes Track: Open source software for RFID mapping and tracking.
+#Hermes Track
+###Open source software for RFID mapping and tracking.
 
-PURPOSE: To allow for easy access to and use of RFID hardware. Various examples are shown below of utilizing RFID hardware wrappers
-          for tracking people throughout an area, alerting someone when they forget to do an action, or generating analytics
-          from IoT data.
+PURPOSE: To allow for easy access to and use of RFID hardware for data aquisition. Various examples are shown below of 
+          utilizing RFID hardware wrappers for tracking people throughout an area, alerting someone when they forget to 
+          do an action, or generating analytics from IoT data.
 
 
 IMPLEMENTATION: This software and hardware pair allows users to map and track activity of a group of users and utilities across multiple areas.
@@ -22,33 +23,26 @@ There is then an API that lets users access the data for data analysis, decision
 purpose tracking.
 
 
-EXAMPLE 1
+##RFID TRACKING SYSTEM
 
-This software turns a group of identifiers of a signal and signal alerts into a timestamp which can be continuously or singularity uploaded to the net.
+###Hardware
+*         The sensor system is implemented using arduino controlled rfid sensors. See Arduino_RFID_Setup.pdf for specifics on 
+          how to setup for use and connecting to Raspberry pis.
 
-These signals update a series of Objects which were initially created by the initializer files.
-The objects in the file will allow users to create their own scheme or timeline to track the individuals across the area.
+*         The tracking system is implemented using Rspbeery Pis for the analysis and communication between RFID nodes. There
+          are two types of Raspberry Pi nodes: the nodes and the hub. 
+          *         The nodes house the sensor and communicate through sockets
+          with the Hub Pi by sending a 64 bit signal everytime it is tripped. The Hub is the main processor for the system. It 
+          runs an loop that takes incoming messages and determines where in different areas the mobile RFID's are. 
+          *         The Hub also manages the cloud database by fetching and pushing data to it. (SEE RASPBERRY_PI_SOFTWARE 
+          FOR ALL OF THE SOFTWARE NEEDED ON THE RASPBERRY PIS)
+          
+###Software
+*         The Raspberry_Pi_Software will need to be loaded onto the pis specified above. See the Setup_Pis.pdf inside for more
+          details. This includes the RFID sensor software, the data processing software, and the database interface software.
+*         Matlab_Data_Analytic_Software contains a matlab library that takes in the data from the database and allows for the 
+          creation of graphs, data analytic equations, and timeseries tracking.
+*         A simple demo was created to show real time tracking of people. This demo is located in the DEMO folder. 
 
-The inputs needed to run this program are initializer text files, and a constantly updating signal text file.
-
-The initializer files needed are:
-
-Activity (representing activities which can report signals across the area)			
-int ID’String name’boolean Static’int Room ID
-Mobile	(beings which can be targeted by Activities across the area)
-int ID’String name			
-Room	(if any rooms or areas in the studyied area)
-int ID’String name’int inside_of_other_RoomID						
-Transfer gate	(Usually referring to doors, stations Mobiles can use to change areas)			
-int ID’String name’int roomAID’int roomBID
-
-The file updated needs:
-TIMESTAMP’(Activity or TransferGate ID)’Mobile ID
-
-The information in the file will then be converted into an output which describes who did what at what time and where.
-
-
-Please note:
-This software is most advantageous to run when paired with the MATLAB open source code Library that accompanies it. 
 
 Thank you for reading this README written after a few days of restlessness.
