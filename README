@@ -22,7 +22,7 @@ There is then an API that lets users access the data for data analysis, decision
 purpose tracking.
 
 
-
+EXAMPLE 1
 
 This software turns a group of identifiers of a signal and signal alerts into a timestamp which can be continuously or singularity uploaded to the net.
 
